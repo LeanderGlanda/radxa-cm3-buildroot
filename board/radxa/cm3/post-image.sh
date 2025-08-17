@@ -4,7 +4,7 @@
 # Adjust the path to where Buildroot places your DTB(s)
 
 # Example: if you're using the device tree from the kernel
-DTB_SRC="${BUILD_DIR}/linux-6.16/arch/arm64/boot/dts/rockchip"
+DTB_SRC="${BUILD_DIR}/linux-main/arch/arm64/boot/dts/rockchip"
 DTB_DST="${TARGET_DIR}/boot"
 DTB_FILE="rk3566-radxa-cm3-io.dtb"
 

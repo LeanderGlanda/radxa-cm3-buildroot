@@ -1,0 +1,21 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          wifi
+# Required-Start:    $network
+# Required-Stop:
+# Default-Start:     2 3 4 5
+# Default-Stop:
+# Short-Description: Setup Wi-Fi
+### END INIT INFO
+
+# Load Wi-Fi kernel module
+modprobe brcmfmac
+
+# Bring up interface
+ip link set wlan0 up
+
+# Start wpa_supplicant
+wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
+
+# Get DHCP lease
+udhcpc -i wlan0
