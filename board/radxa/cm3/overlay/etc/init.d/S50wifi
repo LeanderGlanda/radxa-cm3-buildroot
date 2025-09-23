@@ -14,8 +14,10 @@ modprobe brcmfmac
 # Bring up interface
 ip link set wlan0 up
 
+sleep 1
+
 # Start wpa_supplicant
 wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf
 
 # Get DHCP lease
-udhcpc -i wlan0
+udhcpc -i wlan0 -n
