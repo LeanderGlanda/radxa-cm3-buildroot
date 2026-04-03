@@ -1,0 +1,6 @@
+config BR2_PACKAGE_LLDB
+    bool "lldb"
+    depends on BR2_PACKAGE_LLVM
+    help
+      The LLDB debugger, part of the LLVM project.
+      https://lldb.llvm.org/
